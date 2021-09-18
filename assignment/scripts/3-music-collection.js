@@ -10,15 +10,26 @@ function addToCollection(title, artist, yearPublished){
   }
 
   collection.push(album);
+  console.log(album);
   return album;
 }
 
-console.log(addToCollection('Certified Lover Boy', 'Drake', 2021));
-console.log(addToCollection('Head in the Clouds II', '88rising', 2019));
-console.log(addToCollection('Volume 2', 'Pink Sweat$', 2019));
-console.log(addToCollection('The Universe Smiles Upon You', 'Khurangbin', 2015));
-console.log(addToCollection('Californication', 'Red Hot Chili Peppers', 1999));
-console.log(addToCollection('rainy evening', 'Idealism', 2017));
+addToCollection('Certified Lover Boy', 'Drake', 2021);
+addToCollection('Head in the Clouds II', '88rising', 2019);
+addToCollection('Volume 2', 'Pink Sweat$', 2019);
+addToCollection('The Universe Smiles Upon You', 'Khurangbin', 2015);
+addToCollection('Californication', 'Red Hot Chili Peppers', 1999);
+addToCollection('rainy evening', 'Idealism', 2017);
 
 
 console.log(collection);
+
+
+function showCollection(arr){
+  console.log(arr.length);
+  for(let item in arr){
+    console.log(arr[item.title], 'by' , arr[item.artist], ',published in', arr[item.yearPublished]);
+  }
+}
+
+showCollection(collection);
