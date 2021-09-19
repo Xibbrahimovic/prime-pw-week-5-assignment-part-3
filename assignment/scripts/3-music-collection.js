@@ -1,8 +1,8 @@
 console.log('***** Music Collection *****')
 
-let collection = [];//empty array for music collection
+let collection = []; //empty array for music collection
 
-function addToCollection(title, artist, yearPublished){
+function addToCollection(title, artist, yearPublished) {
   let album = {
     title: title,
     artist: artist,
@@ -25,11 +25,29 @@ addToCollection('rainy evening', 'Idealism', 2017);
 console.log(collection);
 
 
-function showCollection(arr){
+function showCollection(arr) {
   console.log(arr.length);
-  for(let item in arr){
-    console.log(arr[item.title], 'by' , arr[item.artist], ',published in', arr[item.yearPublished]);
+  for (let i = 0; i < arr.length; i++)
+    console.log(arr[i].title, 'by', arr[i].artist, ',published in', arr[i].yearPublished);
+}
+
+
+showCollection(collection);
+
+
+function findByArtist(artist) {
+  artistList = [];
+  for (let i = 0; i < collection.length; i++) {
+    if (artist === collection[i].artist) {
+      artistList.push(artist);
+      console.log(artistList);
+      return artistList[artist];
+    } else {
+      console.log(artistList);
+      return artistList;
+    }
   }
 }
 
-showCollection(collection);
+findByArtist('Drake');
+findByArtist('Kendrick Lamar');
